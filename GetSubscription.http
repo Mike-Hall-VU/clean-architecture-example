@@ -1,4 +1,0 @@
-@host = http://localhost:5195
-@subscriptionId=8540b82c-d569-448c-9397-42f2f898169c
-
-GET {{host}}/Subscriptions/{{subscriptionId}}
