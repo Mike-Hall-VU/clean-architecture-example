@@ -9,9 +9,9 @@ namespace GymManagement.Api.Controllers;
 [Route("gyms/{gymId:guid}/rooms")]
 public class RoomsController : ApiController
 {
-    private readonly ISender _mediator;
+    private readonly IMediator _mediator;
 
-    public RoomsController(ISender mediator)
+    public RoomsController(IMediator mediator)
     {
         _mediator = mediator;
     }
