@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{47A1C75B-2E68-456F-AEE6-5D92AC6A0618}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManagement.Api", "src\GymManagement.Api\GymManagement.Api.csproj", "{F31AC4F3-0929-421E-BD03-49A943960597}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManagement.Application", "src\GymManagement.Application\GymManagement.Application.csproj", "{794A209B-3966-45A1-B1A1-19DF806A64EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManagement.Domain", "src\GymManagement.Domain\GymManagement.Domain.csproj", "{1066CD35-D253-4566-ABFB-27909AC19857}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManagement.Infrastructure", "src\GymManagement.Infrastructure\GymManagement.Infrastructure.csproj", "{1832B56B-F113-4580-B7BD-30C5D2230AB5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManagement.Contracts", "src\GymManagement.Contracts\GymManagement.Contracts.csproj", "{34ABFE48-7EA2-41AD-9BD4-9737A51D9B9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "requests", "requests", "{FE3A860D-FC9B-45C2-9DBB-D4C08A188B20}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subscriptions", "Subscriptions", "{59372C2F-D6C1-456A-925D-B3F5159B4C78}"
+	ProjectSection(SolutionItems) = preProject
+		CreateSubscription.http = CreateSubscription.http
+		..\GymManagementv2\requests\Subscriptions\DeleteSubscription.http = ..\GymManagementv2\requests\Subscriptions\DeleteSubscription.http
+		GetSubscription.http = GetSubscription.http
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rooms", "Rooms", "{C5D93897-36BE-4CA5-96A9-29F0AE9DFA26}"
+	ProjectSection(SolutionItems) = preProject
+		..\GymManagementv2\requests\Rooms\CreateRoom.http = ..\GymManagementv2\requests\Rooms\CreateRoom.http
+		..\GymManagementv2\requests\Rooms\DeleteRoom.http = ..\GymManagementv2\requests\Rooms\DeleteRoom.http
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gyms", "Gyms", "{5699049A-AF5D-494E-8B1A-576F2879244C}"
+	ProjectSection(SolutionItems) = preProject
+		..\GymManagementv2\requests\Gyms\AddTrainer.http = ..\GymManagementv2\requests\Gyms\AddTrainer.http
+		..\GymManagementv2\requests\Gyms\CreateGym.http = ..\GymManagementv2\requests\Gyms\CreateGym.http
+		..\GymManagementv2\requests\Gyms\DeleteGym.http = ..\GymManagementv2\requests\Gyms\DeleteGym.http
+		..\GymManagementv2\requests\Gyms\ListGyms.http = ..\GymManagementv2\requests\Gyms\ListGyms.http
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F31AC4F3-0929-421E-BD03-49A943960597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31AC4F3-0929-421E-BD03-49A943960597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31AC4F3-0929-421E-BD03-49A943960597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31AC4F3-0929-421E-BD03-49A943960597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{794A209B-3966-45A1-B1A1-19DF806A64EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794A209B-3966-45A1-B1A1-19DF806A64EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794A209B-3966-45A1-B1A1-19DF806A64EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794A209B-3966-45A1-B1A1-19DF806A64EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1066CD35-D253-4566-ABFB-27909AC19857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1066CD35-D253-4566-ABFB-27909AC19857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1066CD35-D253-4566-ABFB-27909AC19857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1066CD35-D253-4566-ABFB-27909AC19857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1832B56B-F113-4580-B7BD-30C5D2230AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1832B56B-F113-4580-B7BD-30C5D2230AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1832B56B-F113-4580-B7BD-30C5D2230AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1832B56B-F113-4580-B7BD-30C5D2230AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34ABFE48-7EA2-41AD-9BD4-9737A51D9B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34ABFE48-7EA2-41AD-9BD4-9737A51D9B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34ABFE48-7EA2-41AD-9BD4-9737A51D9B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34ABFE48-7EA2-41AD-9BD4-9737A51D9B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F31AC4F3-0929-421E-BD03-49A943960597} = {47A1C75B-2E68-456F-AEE6-5D92AC6A0618}
+		{794A209B-3966-45A1-B1A1-19DF806A64EE} = {47A1C75B-2E68-456F-AEE6-5D92AC6A0618}
+		{1066CD35-D253-4566-ABFB-27909AC19857} = {47A1C75B-2E68-456F-AEE6-5D92AC6A0618}
+		{1832B56B-F113-4580-B7BD-30C5D2230AB5} = {47A1C75B-2E68-456F-AEE6-5D92AC6A0618}
+		{34ABFE48-7EA2-41AD-9BD4-9737A51D9B9D} = {47A1C75B-2E68-456F-AEE6-5D92AC6A0618}
+		{59372C2F-D6C1-456A-925D-B3F5159B4C78} = {FE3A860D-FC9B-45C2-9DBB-D4C08A188B20}
+		{C5D93897-36BE-4CA5-96A9-29F0AE9DFA26} = {FE3A860D-FC9B-45C2-9DBB-D4C08A188B20}
+		{5699049A-AF5D-494E-8B1A-576F2879244C} = {FE3A860D-FC9B-45C2-9DBB-D4C08A188B20}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB6DCE4E-E793-42FD-9022-1371339D6C57}
+	EndGlobalSection
+EndGlobal
