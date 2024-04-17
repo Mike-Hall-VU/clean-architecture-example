@@ -1,4 +1,5 @@
 ﻿using GymManagement.Application.Subscriptions.Commands.CreateSubscription;
+using GymManagement.Application.Subscriptions.Commands.DeleteSubscription;
 using GymManagement.Application.Subscriptions.Queries.GetSubscription;
 using GymManagement.Contracts.Subscriptions;
 using MediatR;
@@ -21,40 +22,28 @@ namespace GymManagement.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateSubscription(CreateSubscriptionRequest request)
         {
-
-            //if (DomainSubscriptionType.TryFromName(
-            //    request.subscriptionType.ToString(),
-            //    out var subscriptionType))
-            //{
-            //    return Problem(
-            //        statusCode: StatusCodes.Status400BadRequest,
-            //        detail: "Invalid subscription type.");
-            //}
-
-            var subscriptionType = DomainSubscriptionType.FromName(request.subscriptionType.ToString());
+            if (!DomainSubscriptionType.TryFromName(
+                request.SubscriptionType.ToString(),
+                out var subscriptionType))
+            {
+                return Problem(
+                    statusCode: StatusCodes.Status400BadRequest,
+                    detail: "Invalid subscription type");
+            }
 
             var command = new CreateSubscriptionCommand(
-                subscriptionType, 
-                request.adminId);
+                subscriptionType,
+                request.AdminId);
 
             var createSubscriptionResult = await _mediator.Send(command);
 
-            //The Match method will allow you to return a list of errors instead of the first error
-            return createSubscriptionResult.MatchFirst(
-                subscription => Ok(new SubscriptionResponse(subscription.Id, request.subscriptionType)),
-                error => Problem());
-
-
-            //if (createSubscriptionResult.IsError) 
-            //{
-            //    return Problem();
-            //}
-
-            //var response = new SubscriptionResponse(
-            //    createSubscriptionResult.Value,
-            //    request.subscriptionType);
-
-            //return Ok(response);
+            return createSubscriptionResult.Match(
+                subscription => CreatedAtAction(
+                    nameof(GetSubscription),
+                    new { subscriptionId = subscription.Id },
+                    new SubscriptionResponse(
+                        subscription.Id,
+                        ToDto(subscription.SubscriptionType))), errors => Problem());
         }
 
         [HttpGet("{subscriptionId:guid}")]
@@ -62,13 +51,36 @@ namespace GymManagement.Api.Controllers
         {
             var query = new GetSubscriptionQuery(subscriptionId);
 
-            var getSubscriptionResult = await _mediator.Send(query);
+            var getSubscriptionsResult = await _mediator.Send(query);
 
-            return getSubscriptionResult.MatchFirst(
+            return getSubscriptionsResult.Match(
                 subscription => Ok(new SubscriptionResponse(
                     subscription.Id,
-                    Enum.Parse<SubscriptionType>(subscription.SubscriptionType.Name))),
-                error => Problem());
+                    ToDto(subscription.SubscriptionType))),
+                errors => Problem());
+        }
+
+        [HttpDelete("{subscriptionId:guid}")]
+        public async Task<IActionResult> DeleteSubscription(Guid subscriptionId)
+        {
+            var command = new DeleteSubscriptionCommand(subscriptionId);
+
+            var createSubscriptionResult = await _mediator.Send(command);
+
+            return createSubscriptionResult.Match<IActionResult>(
+                _ => NoContent(),
+                errors => Problem());
+        }
+
+        private static SubscriptionType ToDto(DomainSubscriptionType subscriptionType)
+        {
+            return subscriptionType.Name switch
+            {
+                nameof(DomainSubscriptionType.Free) => SubscriptionType.Free,
+                nameof(DomainSubscriptionType.Starter) => SubscriptionType.Starter,
+                nameof(DomainSubscriptionType.Pro) => SubscriptionType.Pro,
+                _ => throw new InvalidOperationException(),
+            };
         }
     }
 }
