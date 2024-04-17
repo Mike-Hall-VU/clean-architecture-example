@@ -15,27 +15,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManagement.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManagement.Contracts", "src\GymManagement.Contracts\GymManagement.Contracts.csproj", "{34ABFE48-7EA2-41AD-9BD4-9737A51D9B9D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "requests", "requests", "{FE3A860D-FC9B-45C2-9DBB-D4C08A188B20}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "requests", "requests", "{F0E5BF9D-EC25-4E80-A3C3-B5BF05BEA994}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subscriptions", "Subscriptions", "{59372C2F-D6C1-456A-925D-B3F5159B4C78}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gyms", "Gyms", "{DDC26D18-E450-4CCD-9F09-6916CD36A423}"
 	ProjectSection(SolutionItems) = preProject
-		CreateSubscription.http = CreateSubscription.http
-		..\GymManagementv2\requests\Subscriptions\DeleteSubscription.http = ..\GymManagementv2\requests\Subscriptions\DeleteSubscription.http
-		GetSubscription.http = GetSubscription.http
+		requests\Gyms\AddTrainer.http = requests\Gyms\AddTrainer.http
+		requests\Gyms\CreateGym.http = requests\Gyms\CreateGym.http
+		requests\Gyms\DeleteGym.http = requests\Gyms\DeleteGym.http
+		requests\Gyms\ListGyms.http = requests\Gyms\ListGyms.http
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rooms", "Rooms", "{C5D93897-36BE-4CA5-96A9-29F0AE9DFA26}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rooms", "Rooms", "{149551E9-C285-49CA-8B96-89FC303B1094}"
 	ProjectSection(SolutionItems) = preProject
-		..\GymManagementv2\requests\Rooms\CreateRoom.http = ..\GymManagementv2\requests\Rooms\CreateRoom.http
-		..\GymManagementv2\requests\Rooms\DeleteRoom.http = ..\GymManagementv2\requests\Rooms\DeleteRoom.http
+		requests\Rooms\CreateRoom.http = requests\Rooms\CreateRoom.http
+		requests\Rooms\DeleteRoom.http = requests\Rooms\DeleteRoom.http
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gyms", "Gyms", "{5699049A-AF5D-494E-8B1A-576F2879244C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subscriptions", "Subscriptions", "{40FAE0AC-6383-450D-9BA6-8C02803A9622}"
 	ProjectSection(SolutionItems) = preProject
-		..\GymManagementv2\requests\Gyms\AddTrainer.http = ..\GymManagementv2\requests\Gyms\AddTrainer.http
-		..\GymManagementv2\requests\Gyms\CreateGym.http = ..\GymManagementv2\requests\Gyms\CreateGym.http
-		..\GymManagementv2\requests\Gyms\DeleteGym.http = ..\GymManagementv2\requests\Gyms\DeleteGym.http
-		..\GymManagementv2\requests\Gyms\ListGyms.http = ..\GymManagementv2\requests\Gyms\ListGyms.http
+		requests\Subscriptions\CreateSubscription.http = requests\Subscriptions\CreateSubscription.http
+		requests\Subscriptions\DeleteSubscription.http = requests\Subscriptions\DeleteSubscription.http
+		requests\Subscriptions\GetSubscription.http = requests\Subscriptions\GetSubscription.http
 	EndProjectSection
 EndProject
 Global
@@ -74,9 +74,9 @@ Global
 		{1066CD35-D253-4566-ABFB-27909AC19857} = {47A1C75B-2E68-456F-AEE6-5D92AC6A0618}
 		{1832B56B-F113-4580-B7BD-30C5D2230AB5} = {47A1C75B-2E68-456F-AEE6-5D92AC6A0618}
 		{34ABFE48-7EA2-41AD-9BD4-9737A51D9B9D} = {47A1C75B-2E68-456F-AEE6-5D92AC6A0618}
-		{59372C2F-D6C1-456A-925D-B3F5159B4C78} = {FE3A860D-FC9B-45C2-9DBB-D4C08A188B20}
-		{C5D93897-36BE-4CA5-96A9-29F0AE9DFA26} = {FE3A860D-FC9B-45C2-9DBB-D4C08A188B20}
-		{5699049A-AF5D-494E-8B1A-576F2879244C} = {FE3A860D-FC9B-45C2-9DBB-D4C08A188B20}
+		{DDC26D18-E450-4CCD-9F09-6916CD36A423} = {F0E5BF9D-EC25-4E80-A3C3-B5BF05BEA994}
+		{149551E9-C285-49CA-8B96-89FC303B1094} = {F0E5BF9D-EC25-4E80-A3C3-B5BF05BEA994}
+		{40FAE0AC-6383-450D-9BA6-8C02803A9622} = {F0E5BF9D-EC25-4E80-A3C3-B5BF05BEA994}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB6DCE4E-E793-42FD-9022-1371339D6C57}
